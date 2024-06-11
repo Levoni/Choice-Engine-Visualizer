@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://btcgwa3cu5ijq"]
+
+[node name="GraphEdit" type="GraphEdit"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 57.0
+offset_top = 1.0
+offset_right = 57.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GraphNode" type="GraphNode" parent="."]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 149.0
+offset_right = 286.0
+offset_bottom = 314.0
+mouse_filter = 1
+position_offset = Vector2(62, 149)
+title = "100"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+
+[node name="PanelContainer" type="PanelContainer" parent="GraphNode"]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="OptionButton" type="OptionButton" parent="GraphNode/PanelContainer"]
+layout_mode = 2
+
+[node name="GraphNode2" type="GraphNode" parent="."]
+layout_mode = 0
+offset_left = 468.0
+offset_top = 216.0
+offset_right = 668.0
+offset_bottom = 291.0
+mouse_filter = 1
+position_offset = Vector2(468, 216)
+title = "102"
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+
+[node name="PanelContainer" type="PanelContainer" parent="GraphNode2"]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="OptionButton" type="OptionButton" parent="GraphNode2/PanelContainer"]
+layout_mode = 2
