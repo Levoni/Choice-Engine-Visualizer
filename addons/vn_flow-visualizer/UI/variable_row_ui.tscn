@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://bybnunb650jjn"]
+
+[ext_resource type="Script" path="res://addons/vn_flow-visualizer/Scripts/VariableRow.gd" id="1_66ds5"]
+
+[node name="variable_ui" type="HBoxContainer" node_paths=PackedStringArray("variableName", "variableValue", "delButton")]
+script = ExtResource("1_66ds5")
+variableName = NodePath("Label")
+variableValue = NodePath("LineEdit")
+delButton = NodePath("Button")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "Var Placeholder"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+text = "X"

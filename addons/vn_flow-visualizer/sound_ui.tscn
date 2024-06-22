@@ -1,0 +1,81 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfwyh3fmtmro3"]
+
+[ext_resource type="Script" path="res://addons/vn_flow-visualizer/Scripts/soundHandler.gd" id="1_ou2qo"]
+[ext_resource type="Script" path="res://addons/vn_flow-visualizer/OBSoundType.gd" id="2_hst0m"]
+[ext_resource type="Script" path="res://addons/vn_flow-visualizer/OBSoundAction.gd" id="3_0fw8h"]
+
+[node name="soundUI" type="MarginContainer" node_paths=PackedStringArray("deleteButton", "button", "hideBox")]
+theme_override_constants/margin_left = 10
+script = ExtResource("1_ou2qo")
+deleteButton = NodePath("VBoxContainer/HBoxContainer4/Button2")
+button = NodePath("VBoxContainer/HBoxContainer4/Button")
+hideBox = NodePath("VBoxContainer/VBoxContainer")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+theme_type_variation = &"FlatButton"
+text = ">"
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "Sound"
+
+[node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+theme_type_variation = &"FlatButton"
+text = "X"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer/HSplitContainer"]
+layout_mode = 2
+text = "Type"
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer/VBoxContainer/HBoxContainer/HSplitContainer"]
+layout_mode = 2
+script = ExtResource("2_hst0m")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer3/HSplitContainer"]
+layout_mode = 2
+text = "Action"
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer/VBoxContainer/HBoxContainer3/HSplitContainer"]
+layout_mode = 2
+script = ExtResource("3_0fw8h")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/HBoxContainer2/HSplitContainer"]
+layout_mode = 2
+text = "Resource Path"
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/VBoxContainer/HBoxContainer2/HSplitContainer"]
+layout_mode = 2

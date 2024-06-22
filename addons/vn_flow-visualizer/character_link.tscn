@@ -1,0 +1,73 @@
+[gd_scene load_steps=4 format=3 uid="uid://c86wjgyswkl6y"]
+
+[ext_resource type="Script" path="res://addons/vn_flow-visualizer/characterHandler.gd" id="1_gh2nc"]
+[ext_resource type="PackedScene" uid="uid://jut0k686ullc" path="res://addons/vn_flow-visualizer/meta_data_manager.tscn" id="2_oofgb"]
+[ext_resource type="Script" path="res://addons/vn_flow-visualizer/OBCharacterType.gd" id="2_tjt0m"]
+
+[node name="CharacterLink" type="MarginContainer" node_paths=PackedStringArray("deleteButton", "button", "hideBox")]
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_bottom = 5
+script = ExtResource("1_gh2nc")
+deleteButton = NodePath("VBoxContainer/HBoxContainer/Button2")
+button = NodePath("VBoxContainer/HBoxContainer/Button")
+hideBox = NodePath("VBoxContainer/VBoxContainer2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"FlatButton"
+text = ">"
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Character"
+
+[node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"FlatButton"
+text = "X"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="HSplitContainer3" type="HSplitContainer" parent="VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer2/HSplitContainer3"]
+layout_mode = 2
+text = "Type"
+
+[node name="OptionButton" type="OptionButton" parent="VBoxContainer/VBoxContainer2/HSplitContainer3"]
+layout_mode = 2
+script = ExtResource("2_tjt0m")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer2/HSplitContainer"]
+layout_mode = 2
+text = "Name"
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/VBoxContainer2/HSplitContainer"]
+layout_mode = 2
+
+[node name="HSplitContainer4" type="HSplitContainer" parent="VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer2/HSplitContainer4"]
+layout_mode = 2
+text = "Change"
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/VBoxContainer2/HSplitContainer4"]
+layout_mode = 2
+
+[node name="MetaDataManager" parent="VBoxContainer/VBoxContainer2" instance=ExtResource("2_oofgb")]
+layout_mode = 2

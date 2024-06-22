@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://jut0k686ullc"]
+
+[ext_resource type="Script" path="res://addons/vn_flow-visualizer/MetaDataUiManager.gd" id="1_q2ikb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5sdxc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jcn23"]
+
+[node name="MetaDataManager" type="HBoxContainer" node_paths=PackedStringArray("addButton", "button")]
+script = ExtResource("1_q2ikb")
+addButton = NodePath("HSplitContainer/Button")
+button = NodePath("HSplitContainer/HSplitContainer2/Button")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+split_offset = 180
+
+[node name="HSplitContainer2" type="HSplitContainer" parent="HSplitContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="HSplitContainer/HSplitContainer2"]
+layout_mode = 2
+theme_type_variation = &"FlatButton"
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5sdxc")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jcn23")
+text = "v"
+
+[node name="Label" type="Label" parent="HSplitContainer/HSplitContainer2"]
+layout_mode = 2
+text = "MetaData"
+
+[node name="Button" type="Button" parent="HSplitContainer"]
+layout_mode = 2
+text = "Add"
+
+[connection signal="pressed" from="HSplitContainer/HSplitContainer2/Button" to="HSplitContainer/HSplitContainer2/Button" method="_on_pressed"]

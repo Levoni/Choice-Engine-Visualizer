@@ -1,17 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://btcgwa3cu5ijq"]
+[gd_scene load_steps=7 format=3 uid="uid://btcgwa3cu5ijq"]
 
 [ext_resource type="Script" path="res://addons/vn_flow-visualizer/resourceManager.gd" id="1_jc2ne"]
 [ext_resource type="Script" path="res://addons/vn_flow-visualizer/TabController.gd" id="2_8gvs3"]
 [ext_resource type="Script" path="res://addons/vn_flow-visualizer/fileImporter.gd" id="2_pu6mo"]
-[ext_resource type="PackedScene" uid="uid://bv472ab3vusss" path="res://addons/vn_flow-visualizer/UI/character_container_ui.tscn" id="3_63i4i"]
 [ext_resource type="Script" path="res://addons/vn_flow-visualizer/GraphManager.gd" id="3_67al4"]
 [ext_resource type="Script" path="res://addons/vn_flow-visualizer/Scripts/characterTab.gd" id="3_xq0m2"]
 [ext_resource type="Script" path="res://addons/vn_flow-visualizer/Scripts/FlagTab.gd" id="4_odibq"]
-[ext_resource type="PackedScene" uid="uid://dim7l64hnu0e7" path="res://addons/vn_flow-visualizer/UI/flag_row_ui.tscn" id="6_x7jv8"]
-[ext_resource type="Script" path="res://addons/vn_flow-visualizer/Scripts/VariableTab.gd" id="7_sg85f"]
-[ext_resource type="PackedScene" uid="uid://bybnunb650jjn" path="res://addons/vn_flow-visualizer/UI/variable_row_ui.tscn" id="8_bajwp"]
-[ext_resource type="Script" path="res://addons/vn_flow-visualizer/Scripts/SoundTab.gd" id="9_uyby2"]
-[ext_resource type="PackedScene" uid="uid://c8i02kleg0wlo" path="res://addons/vn_flow-visualizer/UI/sound_row_ui.tscn" id="10_prpta"]
 
 [node name="HBoxContainer" type="HBoxContainer"]
 anchors_preset = 15
@@ -41,8 +35,8 @@ size_flags_horizontal = 3
 tab_count = 6
 tab_0/title = "Node"
 tab_1/title = "Character"
-tab_2/title = "Flags"
-tab_3/title = "Variables"
+tab_2/title = "Variables"
+tab_3/title = "Flags"
 tab_4/title = "Sounds"
 tab_5/title = "Import"
 script = ExtResource("2_8gvs3")
@@ -52,14 +46,10 @@ visible = false
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="characterContainer" type="VBoxContainer" parent="Panel/VBoxContainer" node_paths=PackedStringArray("addButton", "nameInput")]
+[node name="characterContainer" type="VBoxContainer" parent="Panel/VBoxContainer"]
 visible = false
 layout_mode = 2
 script = ExtResource("3_xq0m2")
-addButton = NodePath("HBoxContainer/Button")
-nameInput = NodePath("HBoxContainer/LineEdit")
-resourcePath = "res://addons/vn_flow-visualizer/UI/character_container_ui.tscn"
-Scene = ExtResource("3_63i4i")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/characterContainer"]
 layout_mode = 2
@@ -82,13 +72,9 @@ text = "Add"
 [node name="HSeparator" type="HSeparator" parent="Panel/VBoxContainer/characterContainer"]
 layout_mode = 2
 
-[node name="flagContainer" type="VBoxContainer" parent="Panel/VBoxContainer" node_paths=PackedStringArray("addButton", "nameInput")]
-visible = false
+[node name="flagContainer" type="VBoxContainer" parent="Panel/VBoxContainer"]
 layout_mode = 2
 script = ExtResource("4_odibq")
-addButton = NodePath("HBoxContainer/Button")
-nameInput = NodePath("HBoxContainer/LineEdit")
-Scene = ExtResource("6_x7jv8")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/flagContainer"]
 layout_mode = 2
@@ -111,14 +97,9 @@ text = "Add"
 [node name="HSeparator" type="HSeparator" parent="Panel/VBoxContainer/flagContainer"]
 layout_mode = 2
 
-[node name="variableContainer" type="VBoxContainer" parent="Panel/VBoxContainer" node_paths=PackedStringArray("valueInput", "addButton", "nameInput")]
+[node name="variableContainer" type="VBoxContainer" parent="Panel/VBoxContainer"]
 visible = false
 layout_mode = 2
-script = ExtResource("7_sg85f")
-valueInput = NodePath("HBoxContainer/VSplitContainer2/LineEdit2")
-addButton = NodePath("HBoxContainer/Button")
-nameInput = NodePath("HBoxContainer/VSplitContainer/LineEdit")
-Scene = ExtResource("8_bajwp")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/variableContainer"]
 layout_mode = 2
@@ -161,12 +142,24 @@ layout_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/variableContainer"]
 layout_mode = 2
 
-[node name="soundContainer" type="VBoxContainer" parent="Panel/VBoxContainer" node_paths=PackedStringArray("addButton", "nameInput")]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/variableContainer/VBoxContainer"]
 layout_mode = 2
-script = ExtResource("9_uyby2")
-addButton = NodePath("HBoxContainer/Button")
-nameInput = NodePath("HBoxContainer/LineEdit")
-Scene = ExtResource("10_prpta")
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/variableContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Var Placeholder"
+
+[node name="LineEdit" type="LineEdit" parent="Panel/VBoxContainer/variableContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer/variableContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "X"
+
+[node name="soundContainer" type="VBoxContainer" parent="Panel/VBoxContainer"]
+visible = false
+layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/soundContainer"]
 layout_mode = 2
@@ -191,6 +184,44 @@ layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/soundContainer"]
 layout_mode = 2
+
+[node name="Sound" type="VBoxContainer" parent="Panel/VBoxContainer/soundContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/soundContainer/VBoxContainer/Sound"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer/soundContainer/VBoxContainer/Sound/HBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"FlatButton"
+text = ">"
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/soundContainer/VBoxContainer/Sound/HBoxContainer"]
+layout_mode = 2
+text = "Name Placholder"
+
+[node name="Control" type="Control" parent="Panel/VBoxContainer/soundContainer/VBoxContainer/Sound/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button2" type="Button" parent="Panel/VBoxContainer/soundContainer/VBoxContainer/Sound/HBoxContainer"]
+layout_mode = 2
+text = "X"
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer/soundContainer/VBoxContainer/Sound"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainer/soundContainer/VBoxContainer/Sound/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/soundContainer/VBoxContainer/Sound/MarginContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Resource Path: "
+
+[node name="LineEdit" type="LineEdit" parent="Panel/VBoxContainer/soundContainer/VBoxContainer/Sound/MarginContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="importContainer" type="VBoxContainer" parent="Panel/VBoxContainer"]
 visible = false

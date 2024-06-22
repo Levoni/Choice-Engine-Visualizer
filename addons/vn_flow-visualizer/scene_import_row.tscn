@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://defqgombeksyj"]
+
+[ext_resource type="Script" path="res://addons/vn_flow-visualizer/sceneImportRow.gd" id="1_e5a2n"]
+
+[node name="scene_import_row" type="MarginContainer" node_paths=PackedStringArray("deleteButton", "loadButton", "sceneNameLabel")]
+theme_override_constants/margin_left = 10
+script = ExtResource("1_e5a2n")
+deleteButton = NodePath("HBoxContainer/Button2")
+loadButton = NodePath("HBoxContainer/Button")
+sceneNameLabel = NodePath("HBoxContainer/Label")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Scene_bathroom_1"
+text_overrun_behavior = 3
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Select"
+
+[node name="Control" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button2" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "X"

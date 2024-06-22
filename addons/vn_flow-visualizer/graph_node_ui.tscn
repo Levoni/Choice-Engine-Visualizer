@@ -1,0 +1,244 @@
+[gd_scene load_steps=9 format=3 uid="uid://bry8kkpgwsu36"]
+
+[ext_resource type="Script" path="res://addons/vn_flow-visualizer/NodeManager.gd" id="1_suw7a"]
+[ext_resource type="Script" path="res://addons/vn_flow-visualizer/SceneEventType.gd" id="2_0vaoo"]
+[ext_resource type="PackedScene" uid="uid://jut0k686ullc" path="res://addons/vn_flow-visualizer/meta_data_manager.tscn" id="2_xjw16"]
+[ext_resource type="Script" path="res://addons/vn_flow-visualizer/CharacterUiManager.gd" id="3_oanaa"]
+[ext_resource type="Script" path="res://addons/vn_flow-visualizer/RouteUiManager.gd" id="4_fk4eg"]
+[ext_resource type="Script" path="res://addons/vn_flow-visualizer/SoundUiManager.gd" id="5_lujs0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5sdxc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jcn23"]
+
+[node name="GraphNode" type="GraphNode"]
+custom_minimum_size = Vector2(300, 250)
+offset_left = 139.0
+offset_top = 69.0
+offset_right = 439.0
+offset_bottom = 433.0
+size_flags_vertical = 3
+mouse_filter = 1
+position_offset = Vector2(139, 69)
+resizable = true
+title = "100"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+slot/1/left_enabled = false
+slot/1/left_type = 0
+slot/1/left_color = Color(1, 1, 1, 1)
+slot/1/left_icon = null
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color(1, 1, 1, 1)
+slot/1/right_icon = null
+slot/1/draw_stylebox = true
+slot/2/left_enabled = false
+slot/2/left_type = 0
+slot/2/left_color = Color(1, 1, 1, 1)
+slot/2/left_icon = null
+slot/2/right_enabled = false
+slot/2/right_type = 0
+slot/2/right_color = Color(1, 1, 1, 1)
+slot/2/right_icon = null
+slot/2/draw_stylebox = true
+slot/3/left_enabled = false
+slot/3/left_type = 0
+slot/3/left_color = Color(1, 1, 1, 1)
+slot/3/left_icon = null
+slot/3/right_enabled = false
+slot/3/right_type = 0
+slot/3/right_color = Color(1, 1, 1, 1)
+slot/3/right_icon = null
+slot/3/draw_stylebox = true
+slot/4/left_enabled = false
+slot/4/left_type = 0
+slot/4/left_color = Color(1, 1, 1, 1)
+slot/4/left_icon = null
+slot/4/right_enabled = false
+slot/4/right_type = 0
+slot/4/right_color = Color(1, 1, 1, 1)
+slot/4/right_icon = null
+slot/4/draw_stylebox = true
+slot/5/left_enabled = false
+slot/5/left_type = 0
+slot/5/left_color = Color(1, 1, 1, 1)
+slot/5/left_icon = null
+slot/5/right_enabled = false
+slot/5/right_type = 0
+slot/5/right_color = Color(1, 1, 1, 1)
+slot/5/right_icon = null
+slot/5/draw_stylebox = true
+slot/6/left_enabled = false
+slot/6/left_type = 0
+slot/6/left_color = Color(1, 1, 1, 1)
+slot/6/left_icon = null
+slot/6/right_enabled = false
+slot/6/right_type = 0
+slot/6/right_color = Color(1, 1, 1, 1)
+slot/6/right_icon = null
+slot/6/draw_stylebox = true
+slot/7/left_enabled = false
+slot/7/left_type = 0
+slot/7/left_color = Color(1, 1, 1, 1)
+slot/7/left_icon = null
+slot/7/right_enabled = false
+slot/7/right_type = 0
+slot/7/right_color = Color(1, 1, 1, 1)
+slot/7/right_icon = null
+slot/7/draw_stylebox = true
+slot/8/left_enabled = false
+slot/8/left_type = 0
+slot/8/left_color = Color(1, 1, 1, 1)
+slot/8/left_icon = null
+slot/8/right_enabled = false
+slot/8/right_type = 0
+slot/8/right_color = Color(1, 1, 1, 1)
+slot/8/right_icon = null
+slot/8/draw_stylebox = true
+script = ExtResource("1_suw7a")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HSplitContainer"]
+layout_mode = 2
+text = "Type"
+
+[node name="SceneEventType" type="OptionButton" parent="HSplitContainer"]
+layout_mode = 2
+script = ExtResource("2_0vaoo")
+
+[node name="HSeparator2" type="HSeparator" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MetaDataManager" parent="VBoxContainer" instance=ExtResource("2_xjw16")]
+layout_mode = 2
+
+[node name="HSeparator3" type="HSeparator" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer2" node_paths=PackedStringArray("addButton", "button")]
+layout_mode = 2
+script = ExtResource("3_oanaa")
+addButton = NodePath("HSplitContainer/Button2")
+button = NodePath("HSplitContainer/HSplitContainer/Button")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+split_offset = 180
+dragger_visibility = 1
+
+[node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer2/HBoxContainer/HSplitContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="VBoxContainer2/HBoxContainer/HSplitContainer/HSplitContainer"]
+layout_mode = 2
+theme_type_variation = &"FlatButton"
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5sdxc")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jcn23")
+text = "v"
+
+[node name="Label" type="Label" parent="VBoxContainer2/HBoxContainer/HSplitContainer/HSplitContainer"]
+layout_mode = 2
+text = "Characters"
+
+[node name="Button2" type="Button" parent="VBoxContainer2/HBoxContainer/HSplitContainer"]
+layout_mode = 2
+text = "Add"
+
+[node name="HSeparator" type="HSeparator" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer3" node_paths=PackedStringArray("addButton", "button")]
+layout_mode = 2
+script = ExtResource("5_lujs0")
+addButton = NodePath("HSplitContainer/Button2")
+button = NodePath("HSplitContainer/HSplitContainer/Button")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer3/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+split_offset = 180
+dragger_visibility = 1
+
+[node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer3/HBoxContainer/HSplitContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="VBoxContainer3/HBoxContainer/HSplitContainer/HSplitContainer"]
+layout_mode = 2
+theme_type_variation = &"FlatButton"
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5sdxc")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jcn23")
+text = "v"
+
+[node name="Label" type="Label" parent="VBoxContainer3/HBoxContainer/HSplitContainer/HSplitContainer"]
+layout_mode = 2
+text = "Sounds"
+
+[node name="Button2" type="Button" parent="VBoxContainer3/HBoxContainer/HSplitContainer"]
+layout_mode = 2
+text = "Add"
+
+[node name="HSeparator4" type="HSeparator" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." node_paths=PackedStringArray("addButton", "button")]
+layout_mode = 2
+script = ExtResource("4_fk4eg")
+addButton = NodePath("HSplitContainer3/Button")
+button = NodePath("HSplitContainer3/HSplitContainer2/Button")
+
+[node name="HSplitContainer3" type="HSplitContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+split_offset = 180
+
+[node name="HSplitContainer2" type="HSplitContainer" parent="HBoxContainer/HSplitContainer3"]
+layout_mode = 2
+dragger_visibility = 1
+
+[node name="Button" type="Button" parent="HBoxContainer/HSplitContainer3/HSplitContainer2"]
+layout_mode = 2
+theme_type_variation = &"FlatButton"
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5sdxc")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jcn23")
+text = "v"
+
+[node name="Label" type="Label" parent="HBoxContainer/HSplitContainer3/HSplitContainer2"]
+layout_mode = 2
+text = "Routes"
+
+[node name="Button" type="Button" parent="HBoxContainer/HSplitContainer3"]
+layout_mode = 2
+text = "Add"
+
+[connection signal="pressed" from="VBoxContainer2/HBoxContainer/HSplitContainer/HSplitContainer/Button" to="VBoxContainer2/HBoxContainer/HSplitContainer/HSplitContainer/Button" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer3/HBoxContainer/HSplitContainer/HSplitContainer/Button" to="VBoxContainer3/HBoxContainer/HSplitContainer/HSplitContainer/Button" method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer/HSplitContainer3/HSplitContainer2/Button" to="HBoxContainer/HSplitContainer3/HSplitContainer2/Button" method="_on_pressed"]

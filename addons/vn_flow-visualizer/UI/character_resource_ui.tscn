@@ -1,0 +1,59 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqnk6t6cu8cfo"]
+
+[ext_resource type="Script" path="res://addons/vn_flow-visualizer/CharacterResource.gd" id="1_fp1jm"]
+
+[node name="CharacterResourceUi" type="VBoxContainer" node_paths=PackedStringArray("deleteButton", "header", "button", "hideBox")]
+script = ExtResource("1_fp1jm")
+deleteButton = NodePath("resourceHeader/del")
+header = NodePath("resourceHeader/Header")
+button = NodePath("resourceHeader/chev")
+hideBox = NodePath("MarginContainer")
+
+[node name="resourceHeader" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="chev" type="Button" parent="resourceHeader"]
+layout_mode = 2
+theme_type_variation = &"FlatButton"
+text = ">"
+
+[node name="Header" type="Label" parent="resourceHeader"]
+layout_mode = 2
+text = "Placehoder Name"
+
+[node name="Control" type="Control" parent="resourceHeader"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="del" type="Button" parent="resourceHeader"]
+layout_mode = 2
+text = "X"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "name"
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "Resource path:"
+
+[node name="LineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3

@@ -1,0 +1,146 @@
+[gd_scene load_steps=3 format=3 uid="uid://bv472ab3vusss"]
+
+[ext_resource type="Script" path="res://addons/vn_flow-visualizer/CharacterManager.gd" id="1_2iq03"]
+[ext_resource type="Script" path="res://addons/vn_flow-visualizer/CharacterResourceManager.gd" id="2_j5lp6"]
+
+[node name="characterContainerUi" type="VBoxContainer" node_paths=PackedStringArray("delButton", "button", "hideBox")]
+script = ExtResource("1_2iq03")
+delButton = NodePath("ChevName/del")
+button = NodePath("ChevName/Button")
+hideBox = NodePath("CharacterMargin")
+
+[node name="ChevName" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="ChevName"]
+layout_mode = 2
+theme_type_variation = &"FlatButton"
+text = ">"
+
+[node name="name" type="Label" parent="ChevName"]
+layout_mode = 2
+text = "Name"
+
+[node name="Control" type="Control" parent="ChevName"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="del" type="Button" parent="ChevName"]
+layout_mode = 2
+text = "X"
+
+[node name="CharacterMargin" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+
+[node name="ResourcesMargin" type="VBoxContainer" parent="CharacterMargin"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="CharacterImages" type="VBoxContainer" parent="CharacterMargin/ResourcesMargin" node_paths=PackedStringArray("addButton", "addNode", "button", "hideBox")]
+layout_mode = 2
+script = ExtResource("2_j5lp6")
+addButton = NodePath("HBoxContainer/Add")
+addNode = NodePath("ImagesMargin/VBoxContainer")
+button = NodePath("HBoxContainer/Chev")
+hideBox = NodePath("ImagesMargin")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CharacterMargin/ResourcesMargin/CharacterImages"]
+layout_mode = 2
+
+[node name="Chev" type="Button" parent="CharacterMargin/ResourcesMargin/CharacterImages/HBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"FlatButton"
+text = ">"
+
+[node name="i" type="Label" parent="CharacterMargin/ResourcesMargin/CharacterImages/HBoxContainer"]
+layout_mode = 2
+text = "Images"
+
+[node name="Control" type="Control" parent="CharacterMargin/ResourcesMargin/CharacterImages/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Add" type="Button" parent="CharacterMargin/ResourcesMargin/CharacterImages/HBoxContainer"]
+layout_mode = 2
+text = "Add"
+
+[node name="ImagesMargin" type="MarginContainer" parent="CharacterMargin/ResourcesMargin/CharacterImages"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CharacterMargin/ResourcesMargin/CharacterImages/ImagesMargin"]
+layout_mode = 2
+
+[node name="CharacterAnimations" type="VBoxContainer" parent="CharacterMargin/ResourcesMargin" node_paths=PackedStringArray("addButton", "addNode", "button", "hideBox")]
+layout_mode = 2
+script = ExtResource("2_j5lp6")
+addButton = NodePath("HBoxContainer/add")
+addNode = NodePath("AnimationMargin/VBoxContainer")
+button = NodePath("HBoxContainer/chev")
+hideBox = NodePath("AnimationMargin")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CharacterMargin/ResourcesMargin/CharacterAnimations"]
+layout_mode = 2
+
+[node name="chev" type="Button" parent="CharacterMargin/ResourcesMargin/CharacterAnimations/HBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"FlatButton"
+text = ">"
+
+[node name="Label" type="Label" parent="CharacterMargin/ResourcesMargin/CharacterAnimations/HBoxContainer"]
+layout_mode = 2
+text = "Animations"
+
+[node name="Control" type="Control" parent="CharacterMargin/ResourcesMargin/CharacterAnimations/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="add" type="Button" parent="CharacterMargin/ResourcesMargin/CharacterAnimations/HBoxContainer"]
+layout_mode = 2
+text = "Add"
+
+[node name="AnimationMargin" type="MarginContainer" parent="CharacterMargin/ResourcesMargin/CharacterAnimations"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CharacterMargin/ResourcesMargin/CharacterAnimations/AnimationMargin"]
+layout_mode = 2
+
+[node name="CharacterSounds" type="VBoxContainer" parent="CharacterMargin/ResourcesMargin" node_paths=PackedStringArray("addButton", "addNode", "button", "hideBox")]
+layout_mode = 2
+script = ExtResource("2_j5lp6")
+addButton = NodePath("HBoxContainer/add")
+addNode = NodePath("SoundsMargin/VBoxContainer")
+button = NodePath("HBoxContainer/chev")
+hideBox = NodePath("SoundsMargin")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CharacterMargin/ResourcesMargin/CharacterSounds"]
+layout_mode = 2
+
+[node name="chev" type="Button" parent="CharacterMargin/ResourcesMargin/CharacterSounds/HBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"FlatButton"
+text = ">"
+
+[node name="Label" type="Label" parent="CharacterMargin/ResourcesMargin/CharacterSounds/HBoxContainer"]
+layout_mode = 2
+text = "Sounds"
+
+[node name="Control" type="Control" parent="CharacterMargin/ResourcesMargin/CharacterSounds/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="add" type="Button" parent="CharacterMargin/ResourcesMargin/CharacterSounds/HBoxContainer"]
+layout_mode = 2
+text = "Add"
+
+[node name="SoundsMargin" type="MarginContainer" parent="CharacterMargin/ResourcesMargin/CharacterSounds"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CharacterMargin/ResourcesMargin/CharacterSounds/SoundsMargin"]
+layout_mode = 2

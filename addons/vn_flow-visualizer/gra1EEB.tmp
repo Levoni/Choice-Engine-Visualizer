@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://btcgwa3cu5ijq"]
+
+[ext_resource type="Script" path="res://addons/vn_flow-visualizer/GraphBus.gd" id="1_pj201"]
+
+[node name="GraphEdit" type="GraphEdit"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = -15.0
+offset_right = 21.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+zoom_min = 0.1
+zoom_max = 5.0
+zoom_step = 1.1
+
+[node name="Bus" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_pj201")

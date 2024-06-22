@@ -1,0 +1,23 @@
+{
+	"nodeType": [
+		"simple",
+		"answer",
+		"textInput"
+	],
+	"characterResourceType": [
+		"image",
+		"voice"
+	],
+	"routeType": [
+		"simple",
+		"answer"
+	],
+	"soundType": [
+		"music",
+		"sfx"
+	],
+	"soundAction": [
+		"play",
+		"stop"
+	],
+}
